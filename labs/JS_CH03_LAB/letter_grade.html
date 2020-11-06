@@ -4,6 +4,22 @@
 	<meta charset="utf-8">
 	<title>Show letter grade</title>
 	<script>
+		"use strict"
+		function main()
+		const MINSCORE = 0;
+		const MAXSCORE = 100;
+		const QUIT = 999;
+
+		let nGrade = 0;
+		let 1Grade = "";
+
+		while (nGrade !== QUIT) {
+			nGrade = parseInt(prompt(`enter grade between ${MINSCORE} and ${MAXSCORE} or ${QUIT} to quit`, "88"));
+
+			while(isNaN(nGrade) || (nGrade < MINSCORE) || (nGrade > MAXSCORE)) {
+				nGrade = parseInt(prompt(`enter grade between ${MINSCORE} and ${MAXSCORE} or {QUIT} to quit`, "88")}
+			)
+			}
 		
 	</script>
 </head>
