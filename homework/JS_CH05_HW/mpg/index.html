@@ -11,7 +11,7 @@
         };
         var calculateMpg = function(miles, gallons) {
 			var mpg = (miles / gallons);
-			mpg = mpg.toFixed();
+			mpg = mpg.toFixed(1);
 			return mpg;
 		};
 		var processEntries = function() {
@@ -23,12 +23,17 @@
             } else if (miles <= 0 || gallons <= 0) {
             	alert("Both entries must be greater than zero");
             } else {
-                $("mpg").value = calculateMPG(miles, gallons);
-                $("miles").focus();
+                $("mpg").value = calculateMpg(miles, gallons);
             }
         };
+		var clearEntries = function() {
+			$("miles").value = "";
+			$("gallons").value = "";
+			$("mpg").value = "";
+		};
 		window.onload = function() {
             $("calculate").onclick = processEntries;
+            $("miles").focus();
         };
     </script>
 </head>
@@ -40,7 +45,7 @@
         <label for="gallons">Gallons of Gas Used:</label>
         <input type="text" id="gallons"><br>
         <label for="mpg">Miles Per Gallon</label>
-        <input type="text" id="mpg" disabled><br>
+        <input type="text" id="mpg"><br>
         <label>&nbsp;</label>
         <input type="button" id="calculate" value="Calculate MPG"><br>
     </main>
